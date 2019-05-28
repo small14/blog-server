@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ofme.blog.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ofme.blog.entity.User">
+        <id column="userId" property="userId" />
+        <result column="email" property="email" />
+        <result column="password" property="password" />
+        <result column="userName" property="userName" />
+        <result column="introduction" property="introduction" />
+        <result column="activation" property="activation" />
+        <result column="createTime" property="createTime" />
+        <result column="updateTime" property="updateTime" />
+    </resultMap>
+
+
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        a.userId AS "userId",
+        a.email AS "email",
+        a.password AS "password",
+        a.userName AS "userName",
+        a.introduction AS "introduction",
+        a.activation AS "activation",
+        a.createTime AS "createTime",
+        a.updateTime AS "updateTime",
+    </sql>
+
+
+    <select id="queryUserRoleCodeList" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT r.roleCode FROM `user_role` ur LEFT JOIN `role` r on  ur.`roleId` = r.`roleId` AND ur.`userId` = #{userId}
+    </select>
+
+
+
+</mapper>

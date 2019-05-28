@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ofme.blog.mapper.PermissionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ofme.blog.entity.Permission">
+        <id column="permissionId" property="permissionId" />
+        <result column="permissionName" property="permissionName" />
+        <result column="permissionDescription" property="permissionDescription" />
+        <result column="permissionCode" property="permissionCode" />
+        <result column="createTime" property="createTime" />
+        <result column="updateTime" property="updateTime" />
+    </resultMap>
+
+
+
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        a.permissionId AS "permissionId",
+        a.permissionName AS "permissionName",
+        a.permissionDescription AS "permissionDescription",
+        a.permissionCode AS "permissionCode",
+        a.createTime AS "createTime",
+        a.updateTime AS "updateTime",
+
+    </sql>
+
+
+
+
+</mapper>

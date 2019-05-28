@@ -1,0 +1,42 @@
+server:
+  port: 97
+  servlet:
+    context-path: /blog
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  datasource:
+    name: mydata
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      clear-filters-enable: true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://rm-bp17pajd871eq7zxtto.mysql.rds.aliyuncs.com:3306/ofm?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+      username: root
+      password: tl982697020ls!@#
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 6000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: false
+      max-pool-prepared-statement-per-connection-size: 20
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  type-enums-package: com.ofme.blog.entity
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+

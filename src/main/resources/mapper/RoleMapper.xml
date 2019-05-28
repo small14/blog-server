@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ofme.blog.mapper.RoleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ofme.blog.entity.Role">
+        <id column="roleId" property="roleId" />
+        <result column="roleName" property="roleName" />
+        <result column="roleDescription" property="roleDescription" />
+        <result column="roleCode" property="roleCode" />
+        <result column="defaultRole" property="defaultRole" />
+        <result column="createTime" property="createTime" />
+        <result column="updateTime" property="updateTime" />
+    </resultMap>
+
+
+
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        a.roleId AS "roleId",
+        a.roleName AS "roleName",
+        a.roleDescription AS "roleDescription",
+        a.roleCode AS "roleCode",
+        a.defaultRole AS "defaultRole",
+        a.createTime AS "createTime",
+        a.updateTime AS "updateTime",
+
+    </sql>
+
+
+
+
+</mapper>
